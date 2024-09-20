@@ -26,13 +26,14 @@ class FamilyStructure:
         return
 
     def delete_member(self, id):
-        member = [row for row in self._members if row['id'] != id]
-        self._members = member
+        members = [row for row in self._members if row['id'] != id]
+        self._members = members
         return
 
     def get_member(self, id):
-        member = [row for row in self.members if row['id'] == id]
+        member = [row for row in self._members if row['id'] == id]
         return member
+
     # This method is done, it returns a list with all the family members
     def get_all_members(self):
         return self._members
